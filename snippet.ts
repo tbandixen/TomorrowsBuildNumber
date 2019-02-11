@@ -22,9 +22,9 @@ javascript: ((versionsPrefix: string) => {
     .getFullYear()
     .toString()
     .substring(2);
-  const buildNumber = versionsPrefix + shortYear + tomorrowsDayOfYear;
+  const buildNumber = versionsPrefix + shortYear + ('000000000' + tomorrowsDayOfYear).substr(-3);
 
   navigator.clipboard.writeText(buildNumber.toString()).then(void 0, () => {
     alert('Unable to write to 📋. :-( Tomorrows build-number is: ' + buildNumber);
   });
-})('2.2.');
+})('2.3.');
